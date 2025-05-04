@@ -1,0 +1,81 @@
+/* .demo-title {
+    display: flex;
+    flex-wrap: wrap;
+    font: var(--ids_textStyle_title_01_base);
+    font-size: 3rem;
+    font-weight: lighter;
+    gap: var(--ids_size_general_10x);
+    grid-gap: var(--ids_size_general_10x);
+    line-height: 1;
+    width: 100%;
+  }
+  
+  .demo-title-highlight {
+    border-bottom: var(--ids_size_border_medium) solid var(--ids_color_text_highlight);
+    flex: 1;
+    font-weight: 700;
+    padding-bottom: var(--ids_size_general_20x);
+  }
+  
+  .partners-list {
+    align-items: center;
+    -webkit-box-align: center;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: distribute;
+    flex-wrap: wrap;
+    gap: var(--ids_size_general_20x);
+    justify-content: space-around;
+  }
+  
+  .modal-cartoes .header-cartoes {
+    background: var(--ids_color_action_neutral_base_soft);
+    margin-bottom: 1.25rem;
+    padding-top: 3.44rem;
+  }
+  
+  .modal-figure {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-cartoes .header-cartoes .modal-figure img {
+    margin-bottom: -0.94rem;
+    width: 6.25rem;
+  }
+  
+  .clicked-btn {
+    cursor: pointer;
+  }
+  
+  .card-width{
+    height: 400px;
+  }
+  
+  .containter-margin{
+    margin-top: 100px;
+  } */
+
+.ids-row{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: center;
+}
+.ids-container-fluid{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.ids-col-4{
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  }
+
+.form{
+  width: 100%;
+  height: 100%;
+}

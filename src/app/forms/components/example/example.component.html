@@ -1,0 +1,58 @@
+<div class="ids-container-fluid containter-margin">
+    <div class="ids-row">
+      <div class="ids-col-4 ids-card -variant">
+  
+        <p>Digite seu JSON</p>
+        <form [formGroup]="form" class="form">
+          <mat-form-field>
+            <textarea
+              matInput
+              (change)="onTextAreaChange($event)"
+              class="card-width"
+              autoResize
+              cols="30"
+              formControlName="autoResize"
+            ></textarea>
+          </mat-form-field>
+        </form>
+
+      </div>
+  
+      <div class="ids-col-4 ids-card -variant">
+
+        <p>Seu JSON ficará assim</p>
+            <pre><code>{{ saidaEsperadaString }}</code></pre>
+      </div>
+  
+      <div class="ids-col-4 ids-col-sm-8 ids-col-md-4 ids-card -variant card-width'">
+        <p>Seu formulário ficará assim</p>
+        <form [formGroup]="form" autocomplete="off">
+          <div *ngFor="let propriedade of jsonData">
+            {{propriedade.rotulo}}
+            <div *ngIf="propriedade.tipo_dado === 'array'">
+              <mat-form-field *ngFor="let item of propriedade.conteudo">
+                <input 
+                  matInput
+                  id="array.{{propriedade.contrato}}.{{item.contrato}}"
+                  formControlName="requiredWithHelper"
+                  (change)="onChangeDynamicForm($event)"
+                 />
+              </mat-form-field>
+            </div>
+            <mat-form-field *ngIf="propriedade.tipo_dado === 'string'">
+              <mat-label>{{propriedade.rotulo}}</mat-label>
+              <input 
+                matInput
+                id="{{propriedade.contrato}}"
+                formControlName="requiredWithHelper"
+                (change)="onChangeDynamicForm($event)"
+               />
+            </mat-form-field>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,54 @@
+[
+  {
+    "tipo_dado": "array",
+    "contrato": "gato",
+    "rotulo": "gênero animal",
+    "conteudo": [
+      {
+        "tipo_dado": "string",
+        "contrato": "coelho",
+        "rotulo": "gênero animal"
+      }
+    ]
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "coelho",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorrol",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorroi",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorroooooooo",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorrooo",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorroooo",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorroooooo",
+    "rotulo": "gênero animal"
+  },
+  {
+    "tipo_dado": "string",
+    "contrato": "cachorroo",
+    "rotulo": "gênero animal"
+  }
+]
