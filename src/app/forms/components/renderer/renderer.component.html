@@ -1,42 +1,15 @@
-<p>renderer</p>
 <div class="ids-col-4 ids-col-sm-8 ids-col-md-4 ids-card -variant card-width'">
   <p>Seu formulário ficará assim</p>
   <form [formGroup]="form" autocomplete="off">
-    <p>forms works!</p>
     <div style="background-color: lightgray; padding: 10px">
       <ng-container *ngFor="let item of jsonData">
-        <ng-container *ngIf="(item.tipo_dado === 'array') || (item.tipo_dado === 'object')">
-            <mf-forms-section [formsField]="item" [color]="0"></mf-forms-section>
+        <ng-container *ngIf="(item.fieldType === 'section')">
+            <mf-forms-section [formsField]="item" [color]="0" [path]="'mf-forms-dyn'"></mf-forms-section>
         </ng-container>
-        <ng-container *ngIf="item.tipo_dado === 'string'">
-          <mf-forms-field-input [formsField]="item" [color]="0"></mf-forms-field-input>
+        <ng-container *ngIf="item.fieldType === 'input'">
+          <mf-forms-field-input [formsField]="item" [color]="0" [path]="'mf-forms-dyn'"></mf-forms-field-input>
         </ng-container>
       </ng-container>
     </div>
-
-    <!-- <div *ngFor="let propriedade of jsonData">
-      {{propriedade.rotulo}}
-      <div *ngIf="propriedade.tipo_dado === 'array'">
-        <mat-form-field *ngFor="let item of propriedade.conteudo">
-          <input 
-            matInput
-            id="array.{{propriedade.contrato}}.{{item.contrato}}"
-            formControlName="requiredWithHelper"
-            (change)="onChangeDynamicForm($event)"
-           />
-        </mat-form-field>
-      </div>
-      <mat-form-field *ngIf="propriedade.tipo_dado === 'string'">
-        <mat-label>{{propriedade.rotulo}}</mat-label>
-        <input 
-          matInput
-          id="{{propriedade.contrato}}"
-          formControlName="requiredWithHelper"
-          (change)="onChangeDynamicForm($event)"
-         />
-      </mat-form-field>
-    </div> -->
   </form>
-
-
 </div>

@@ -1,6 +1,7 @@
-<div style="background-color: {{currentColor}}">
-  <p>forms-string works!</p>
-  <p>{{ formsField.contrato }}</p>
-  <p>{{ formsField.rotulo }}</p>
-  <p>{{ formsField.tipo_dado }}</p>
-</div>
+<mat-form-field style="background-color: {{currentColor}}">
+  <mat-label>{{ formsField.label }}</mat-label>
+  <input matInput
+  id="{{fieldId}}"
+         (change)="onChange($event)"
+  >
+</mat-form-field>

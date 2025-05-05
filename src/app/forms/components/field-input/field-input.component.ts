@@ -1,9 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsFieldModel } from 'src/app/shared/models/forms-field.model';
+import { FormsRenderService } from 'src/app/shared/services/forms-render/forms-render-service';
 
 @Component({
   selector: 'mf-forms-field-input',
   templateUrl: './field-input.component.html',
+  imports: [MatInputModule, MatFormFieldModule],
   styleUrls: ['./field-input.component.scss'],
   standalone: true,
 })
@@ -21,9 +25,20 @@ export class FieldInputComponent implements OnInit {
   currentColor: string = 'white';
   @Input() formsField!: FormsFieldModel;
   @Input() color!: number;
-  constructor() {}
+  @Input() path!: string;
+  fieldId!: string;
+
+  constructor(private formsRenderService: FormsRenderService) {}
+
   ngOnInit(): void {
-    console.log('string', this.formsField.contrato, this.color)
+    console.log('string', this.formsField.contract, this.color);
     this.currentColor = this.colors.at(this.color % 8)!;
+    this.fieldId = this.path + '.' + this.formsField.contract;
+  }
+
+  onChange(event: Event) {
+    let eventData = event.target as HTMLInputElement;
+    this.formsRenderService.sendFieldInputEvent(eventData.id, eventData.value)
+    console.log(eventData);
   }
 }

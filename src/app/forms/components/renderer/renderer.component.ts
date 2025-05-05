@@ -24,42 +24,23 @@ import { FieldInputComponent } from '../field-input/field-input.component';
   styleUrls: ['./renderer.component.scss'],
 })
 export class RendererComponent implements OnInit, OnDestroy {
-  jsonData: Array<FormsFieldModel> = [] as Array<FormsFieldModel>;
-  saidaEsperada: any = {};
-  saidaEsperadaString: string = '';
-  meuValor: string = 'string';
+  jsonData: FormsFieldModel[] = [] as FormsFieldModel[];
+  expectedJsonOutput: any = {};
+  expectedJsonOutputFormatted: string = '';
   form = new FormGroup({
     autoResize: new FormControl(''),
   });
   private subscription!: Subscription;
-  data$ = this.formsRenderService.data$;
   constructor(private formsRenderService: FormsRenderService) {}
+
   ngOnInit(): void {
     this.subscription = this.formsRenderService.data$.subscribe((value) => {
-      this.jsonData = value as Array<FormsFieldModel>;
+      this.jsonData = value as FormsFieldModel[];
     });
   }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-  onChangeDynamicForm(event: Event) {
-    let eventData = event.target as HTMLInputElement;
-    let data: any = {};
-    if (eventData.id.includes('.')) {
-      let eventDataParts = eventData.id.split('.');
-      eventDataParts.forEach((item: string, i: number) => {
-        if (i === eventDataParts.length - 1) {
-          data[item] = eventData.value;
-        }
-        if (i !== 0) {
-          data = data[item];
-        } else {
-          data = this.saidaEsperada;
-        }
-      });
-    } else {
-      this.saidaEsperada[eventData.id] = eventData.value;
-    }
-    this.saidaEsperadaString = JSON.stringify(this.saidaEsperada);
-  }
+
 }

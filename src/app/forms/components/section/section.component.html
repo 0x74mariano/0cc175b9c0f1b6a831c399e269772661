@@ -1,14 +1,10 @@
-<div style="background-color: {{currentColor}}; padding: 0 0 0 10px">
-  <p>forms-array works!</p>
-  <p>{{formsField.contrato}}</p>
-  <p>{{formsField.rotulo}}</p>
-  <p>{{formsField.tipo_dado}}</p>
-  <ng-container *ngFor="let item of formsField.conteudo">
-    <ng-container *ngIf="item.tipo_dado === 'string'">
-      <mf-forms-field-input [formsField]="item" [color]="outputColor"></mf-forms-field-input>
-    </ng-container>
-    <ng-container *ngIf="(item.tipo_dado === 'array') || (item.tipo_dado === 'object')">
-      <mf-forms-section [formsField]="item" [color]="outputColor"></mf-forms-section>
-    </ng-container>
+<hr>
+<h1>Seção {{formsField.label}}</h1>
+<ng-container *ngFor="let item of formsField.content">
+  <ng-container *ngIf="item.fieldType === 'input'">
+    <mf-forms-field-input [formsField]="item" [color]="outputColor" [path]="path + item.contract"></mf-forms-field-input>
   </ng-container>
-</div>
+  <ng-container *ngIf="(item.fieldType === 'array') || (item.fieldType === 'object')">
+    <mf-forms-section [formsField]="item" [color]="outputColor"></mf-forms-section>
+  </ng-container>
+</ng-container>

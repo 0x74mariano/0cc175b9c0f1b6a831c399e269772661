@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Subscription } from 'rxjs';
 import { FormsFieldModel } from 'src/app/shared/models/forms-field.model';
 import { FormsRenderService } from 'src/app/shared/services/forms-render/forms-render-service';
 
@@ -16,14 +17,23 @@ export class GeneratorComponent implements OnInit {
   parsedJsonData: FormsFieldModel[] = [];
   expectedJsonOutput: any = {};
   expectedJsonOutputFormatted: string = '';
+  private subscription!: Subscription;
   form = new FormGroup({
     autoResize: new FormControl(''),
   });
 
-  constructor(
-    private formsRenderService: FormsRenderService
-  ) {}
+  constructor(private formsRenderService: FormsRenderService) {}
+
   ngOnInit(): void {
+    this.subscription = this.formsRenderService.dynamicFormData$.subscribe(
+      (value) => {
+        this.updateFormattedJson(value);
+      },
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   onTextAreaChange(event: Event) {
@@ -34,29 +44,41 @@ export class GeneratorComponent implements OnInit {
   }
 
   showJsonForm(jsonArray: FormsFieldModel[]) {
-    this.parsedJsonData  = jsonArray;
+    this.parsedJsonData = jsonArray;
     this.expectedJsonOutput = {};
     this.parsedJsonData.forEach((item: FormsFieldModel) => {
-      if (item.tipo_dado === 'string') {
-        this.expectedJsonOutput[item.contrato] = '';
+      if (item.fieldType === 'input') {
+        this.expectedJsonOutput[item.contract] = '';
       }
-      if (item.tipo_dado === 'array') {
-        let newFieldArray: any[] = [];
-        this.expectedJsonOutput[item.contrato] = newFieldArray;
-        item.conteudo?.forEach((subItem: FormsFieldModel) => {
-          let arrayField: any = {}
-          arrayField[subItem.contrato] = '';
-          newFieldArray.push(arrayField);
-        });
+      if (item.fieldType === 'section' && item.dataType === 'array') {
+        this.parseArraySection(item);
       }
-      if (item.tipo_dado === 'object') {
-        let newFieldObjet: any = {};
-        this.expectedJsonOutput[item.contrato] = newFieldObjet;
-        item.conteudo?.forEach((subItem: FormsFieldModel) => {
-          newFieldObjet[subItem.contrato] = '';
-        });
+      if (item.fieldType === 'section' && item.dataType === 'object') {
+        this.parseObjectSection(item);
       }
     });
-    this.expectedJsonOutputFormatted = JSON.stringify(this.expectedJsonOutput, null, 2);
+    this.updateFormattedJson(this.expectedJsonOutput);
+  }
+
+  private parseArraySection(item: FormsFieldModel): void {
+    let newFieldArray: any[] = [];
+    this.expectedJsonOutput[item.contract] = newFieldArray;
+    item.content?.forEach((subItem: FormsFieldModel) => {
+      let arrayField: any = {};
+      arrayField[subItem.contract] = '';
+      newFieldArray.push(arrayField);
+    });
+  }
+
+  private parseObjectSection(item: FormsFieldModel): void {
+    let newFieldObject: any = {};
+    this.expectedJsonOutput[item.contract] = newFieldObject;
+    item.content?.forEach((subItem: FormsFieldModel) => {
+      newFieldObject[subItem.contract] = '';
+    });
+  }
+
+  private updateFormattedJson(dynamicJson: object[]): void {
+    this.expectedJsonOutputFormatted = JSON.stringify(dynamicJson, null, 2);
   }
 }

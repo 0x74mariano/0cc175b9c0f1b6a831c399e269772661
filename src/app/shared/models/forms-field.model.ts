@@ -1,6 +1,7 @@
 export class FormsFieldModel {
-  rotulo!: string
-  tipo_dado!: string
-  contrato!: string
-  conteudo?: Array<FormsFieldModel>
+  label!: string
+  dataType!: string
+  contract!: string
+  content?: FormsFieldModel[]
+  fieldType!: string
 }
