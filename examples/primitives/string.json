@@ -1,0 +1,12 @@
+{
+  "dataType": "object",
+  "fieldType": "section",
+  "content": [
+    {
+      "contract": "data_nascimento",
+      "dataType": "string",
+      "fieldType": "input",
+      "label": "Data de nascimento"
+    }
+  ]
+}

@@ -1,15 +1,11 @@
-<div class="ids-col-4 ids-col-sm-8 ids-col-md-4 ids-card -variant card-width'">
-  <p>Seu formulário ficará assim</p>
+<div class="'" style="margin:20px;">
+  <p style="margin-bottom:20px; font-weight: bold;">Seu formulário ficará assim</p>
   <form [formGroup]="form" autocomplete="off">
-    <div style="background-color: lightgray; padding: 10px">
       <ng-container *ngFor="let item of jsonData">
-        <ng-container *ngIf="(item.fieldType === 'section')">
-            <mf-forms-section [formsField]="item" [color]="0" [path]="'mf-forms-dyn'"></mf-forms-section>
-        </ng-container>
-        <ng-container *ngIf="item.fieldType === 'input'">
-          <mf-forms-field-input [formsField]="item" [color]="0" [path]="'mf-forms-dyn'"></mf-forms-field-input>
+        <p>{{item.fieldType}}</p>
+        <ng-container *ngIf="item.fieldType === 'section'">
+            <mf-forms-section [formsField]="item" [path]="'mf-forms-dyn'"></mf-forms-section>
         </ng-container>
       </ng-container>
-    </div>
   </form>
 </div>

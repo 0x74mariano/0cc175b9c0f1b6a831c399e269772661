@@ -1,0 +1,88 @@
+[
+    {
+      "dataType": "array",
+      "fieldType": "section",
+      "contract": "coelho",
+      "label": "array",
+      "content": [
+        {
+            "dataType": "object",
+            "fieldType": "section",
+            "contract": "gato",
+            "label": "object",
+            "content": [
+                {
+                    "dataType": "array",
+                    "fieldType": "section",
+                    "contract": "coelho",
+                    "label": "array",
+                    "content": [
+                      {
+                          "dataType": "object",
+                          "fieldType": "section",
+                          "contract": "gato",
+                          "label": "object",
+                          "content": [
+                            {
+                                "dataType": "array",
+                                "fieldType": "section",
+                                "contract": "coelho",
+                                "label": "array",
+                                "content": [
+                                  {
+                                      "dataType": "object",
+                                      "fieldType": "section",
+                                      "contract": "gato",
+                                      "label": "object",
+                                      "content": [
+                                        {
+                                            "dataType": "array",
+                                            "fieldType": "section",
+                                            "contract": "coelho",
+                                            "label": "array",
+                                            "content": [
+                                              {
+                                                  "dataType": "object",
+                                                  "fieldType": "section",
+                                                  "contract": "gato",
+                                                  "label": "object",
+                                                  "content": [
+                                                    {
+                                                        "dataType": "array",
+                                                        "fieldType": "section",
+                                                        "contract": "coelho",
+                                                        "label": "array",
+                                                        "content": [
+                                                          {
+                                                              "dataType": "object",
+                                                              "fieldType": "section",
+                                                              "contract": "gato",
+                                                              "label": "object",
+                                                              "content": [
+                                                                {
+                                                                    "dataType": "string",
+                                                                    "contract": "coelhinho",
+                                                                    "label": "genero animal",
+                                                                    "fieldType": "input"
+                                                                  }
+                                                            ]
+                                                          }
+                                                      ]
+                                                  }
+                                                ]
+                                              }
+                                          ]
+                                      }
+                                    ]
+                                  }
+                              ]
+                          }
+                        ]
+                      }
+                  ]
+              }
+          ]
+        }
+    ]
+}
+]

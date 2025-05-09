@@ -1,6 +1,5 @@
-/* // tslint:disable
+// tslint:disable
 import { BehaviorSubject, of } from 'rxjs';
-import { ContextAppService } from '../../services/context-app/context-app.service';
 import { ContextService } from '@quickweb/mfe-context';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { EventTrackingService } from '@microfrontend/analytics';
@@ -12,7 +11,6 @@ import { LogService, OutputProcessService, RedirectService } from '@quickweb/mfe
 import { MainComponent } from './main.component';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SegmentService } from '../../services/segment/segment.service';
 import { Segments } from '@ids/tools';
 import { TestBed } from '@angular/core/testing';
 
@@ -43,10 +41,6 @@ describe('MainComponent', () => {
     listen: () => of(''),
   };
 
-  const segmentoServiceMock: any = {
-    listen: of(),
-    eventSource$: of('varejo'),
-  };
 
   const contextServiceMock = {
     eventSource: eventSourceContextServiceMock,
@@ -76,27 +70,22 @@ describe('MainComponent', () => {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
     providers: [
-        { provide: ContextAppService, useValue: contextoServiceMock },
         { provide: ContextService, useValue: contextServiceMock },
         { provide: EventTrackingService, useValue: eventTrackingServiceMock },
         { provide: Router, useValue: routerMock },
         { provide: LogService, useValue: logServiceMock },
         { provide: RedirectService, useValue: redirectServiceMock },
-        { provide: OutputProcessService, useValue: outputProcessServiceMock },
-        { provide: SegmentService, useValue: segmentoServiceMock },
-    ]
+        { provide: OutputProcessService, useValue: outputProcessServiceMock },    ]
 })
       .overrideComponent(MainComponent, {
         set: {
           providers: [
-            { provide: ContextAppService, useValue: contextoServiceMock },
             { provide: ContextService, useValue: contextServiceMock },
             { provide: EventTrackingService, useValue: eventTrackingServiceMock },
             { provide: Router, useValue: routerMock },
             { provide: LogService, useValue: logServiceMock },
             { provide: RedirectService, useValue: redirectServiceMock },
             { provide: OutputProcessService, useValue: outputProcessServiceMock },
-            { provide: SegmentService, useValue: segmentoServiceMock },
           ],
         },
       })
@@ -110,13 +99,6 @@ describe('MainComponent', () => {
   });
 
 
-  it('deve assinar os eventos do mfe, quando iniciar o componente e receber um evento, o resultado esperado é o evento ser emitido para mfe core', () => {
-    contextoServiceMock.obtain = () => ({ segmento: undefined });
-    contextoServiceMock.listFails = () => [];
-    component.ngOnInit();
-
-    expect(contextoServiceMock.insert).toHaveBeenCalled();
-  });
 
   it('deve assinar os eventos do mfe, quando iniciar o componente e receber um evento, o resultado esperado é o evento ser emitido para mfe core', () => {
     contextoServiceMock.listFails = () => [];
@@ -147,4 +129,3 @@ describe('MainComponent', () => {
 
 
 });
- */

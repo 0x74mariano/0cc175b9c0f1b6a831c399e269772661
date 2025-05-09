@@ -1,0 +1,73 @@
+[
+    {
+        "dataType": "array",
+        "fieldType": "section",
+        "contract": "secao1",
+        "label": "Seção 1 - Dados Pessoais",
+        "content": [
+            {
+                "dataType": "string",
+                "contract": "nome",
+                "label": "Nome",
+                "fieldType": "input"
+            },
+           {
+                "dataType": "string",
+                "contract": "cpf",
+                "label": "CPF",
+                "fieldType": "input"
+            },
+           {
+                "dataType": "string",
+                "contract": "rg",
+                "label": "RG",
+                "fieldType": "input"
+            },
+            {
+                "dataType": "array",
+                "fieldType": "section",
+                "contract": "secao2",
+                "label": "Seção 2 - Dados Residenciais",
+                "content": [
+    
+                   {
+                        "dataType": "string",
+                        "contract": "estado",
+                        "label": "Estado",
+                        "fieldType": "input"
+                    },
+                  {
+                        "dataType": "string",
+                        "contract": "cidade",
+                        "label": "Cidade",
+                        "fieldType": "input"
+                    },
+                  {
+                        "dataType": "string",
+                        "contract": "bairro",
+                        "label": "Bairro",
+                        "fieldType": "input"
+                    },
+               {
+                        "dataType": "string",
+                        "contract": "logradouro",
+                        "label": "Logradouro",
+                        "fieldType": "input"
+                    },
+               {
+                        "dataType": "string",
+                        "contract": "complemento",
+                        "label": "Complemento",
+                        "fieldType": "input"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "dataType": "string",
+        "contract": "experiencia",
+        "label": "Você gostou da experiência?",
+        "fieldType": "input"
+    }
+]

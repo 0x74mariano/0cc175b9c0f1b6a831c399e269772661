@@ -2,28 +2,16 @@
 // Não coloque css aqui caso não tenha conhecimento de desacoplamento de WebComponent
 // Caso tenha dúvida veja o link abaixo
 // https://iconectados.sharepoint.com/:v:/s/Plataforma360i/EdpQW1owrTdLi83do6X01ZwB2Ya5nJtHuHEasK5aMrJnOA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=UQSfKW
-/* @use "sass:meta";
+@use "sass:meta";
 @import "@angular/cdk/overlay-prebuilt.css";
 @import "@angular/cdk/a11y-prebuilt.css";
- */
-
-
-
-/* @import '@ids/styles/scss/fonts/<NOME_FONTE>.css'; */
-/* EXEMPLO: */
-/* @import '@ids/styles/css/fonts/iIcon.css';
-@import '@ids/styles/css/fonts/iDisplay.css';
-@import '@ids/styles/css/fonts/iText.css';
-@import '@ids/styles/css/fonts/exo2.css';
-@import '@ids/styles/css/fonts/firaSans.css';
-@import '@ids/styles/css/fonts/roboto.css'; */
 
 
 /* @import '@ids/tokens/<SEU_SEGMENTO>/tokens.css'; */
 /* IMPORTANTE:  Caso atualize sua versão é necessário atualizar os tokens dos arquivos abaixo*/
 /* IMPORTANTE:  Essa solução é paliativa até o time do IDS possibilitar um recurso automático*/
 /* EXEMPLO: */
-/* @include meta.load-css("../../../../ids/varejo/tokens.css");
+@include meta.load-css("../../../../ids/varejo/tokens.css");
 @include meta.load-css("../../../../ids/uniclass_beta/tokens.css");
 @include meta.load-css("../../../../ids/uniclass/tokens.css");
 @include meta.load-css("../../../../ids/samsung/tokens.css");
@@ -34,8 +22,8 @@
 @include meta.load-css("../../../../ids/personal_bank/tokens.css");
 @include meta.load-css("../../../../ids/magalu/tokens.css");
 @include meta.load-css("../../../../ids/iti/tokens.css");
-@include meta.load-css("../../../../ids/icard/tokens.css");
-@include meta.load-css("../../../../ids/i_bba/tokens.css");
+@include meta.load-css("../../../../ids/itaucard/tokens.css");
+@include meta.load-css("../../../../ids/itau_bba/tokens.css");
 @include meta.load-css("../../../../ids/ion/tokens.css");
 @include meta.load-css("../../../../ids/investment_service/tokens.css");
 @include meta.load-css("../../../../ids/hipercard/tokens.css");
@@ -47,69 +35,9 @@
 @include meta.load-css("../../../../ids/atlas/tokens.css");
 
 .mf-forms {
-  @include meta.load-css("@ids/styles/scss/utils/reboot");
-  @include meta.load-css("@ids/styles/scss/utils/spacing");
-  @include meta.load-css("@ids/styles/scss/styles");
-
-  
+ 
+  /*
     Acrescente o import do css do modal caso ainda
     seja necessário aumentar a força do seletor para refletir os estilos.
-  
-  @include meta.load-css('@ids/styles/scss/components/accordion');
-  @include meta.load-css('@ids/styles/scss/components/action-button');
-  @include meta.load-css('@ids/styles/scss/components/alert');
-  @include meta.load-css('@ids/styles/scss/components/avatar');
-  @include meta.load-css('@ids/styles/scss/components/bottom-sheet');
-  @include meta.load-css('@ids/styles/scss/components/box-field');
-  @include meta.load-css('@ids/styles/scss/components/brand');
-  @include meta.load-css('@ids/styles/scss/components/breadcrumbs');
-  @include meta.load-css('@ids/styles/scss/components/card-base');
-  @include meta.load-css('@ids/styles/scss/components/card');
-  @include meta.load-css('@ids/styles/scss/components/checkbox');
-  @include meta.load-css('@ids/styles/scss/components/chips');
-  @include meta.load-css('@ids/styles/scss/components/contextual-button');
-  @include meta.load-css('@ids/styles/scss/components/datepicker');
-  @include meta.load-css('@ids/styles/scss/components/directional-button');
-  @include meta.load-css('@ids/styles/scss/components/divider');
-  @include meta.load-css('@ids/styles/scss/components/form-field');
-  @include meta.load-css('@ids/styles/scss/components/form-legend');
-  @include meta.load-css('@ids/styles/scss/components/form-message');
-  @include meta.load-css('@ids/styles/scss/components/form-selection-group');
-  @include meta.load-css('@ids/styles/scss/components/form-selection');
-  @include meta.load-css('@ids/styles/scss/components/highlight-button');
-  @include meta.load-css('@ids/styles/scss/components/icon-button');
-  @include meta.load-css('@ids/styles/scss/components/icon');
-  @include meta.load-css('@ids/styles/scss/components/image');
-  @include meta.load-css('@ids/styles/scss/components/input');
-  @include meta.load-css('@ids/styles/scss/components/like');
-  @include meta.load-css('@ids/styles/scss/components/likert');
-  @include meta.load-css('@ids/styles/scss/components/link');
-  @include meta.load-css('@ids/styles/scss/components/list');
-  @include meta.load-css('@ids/styles/scss/components/listbox');
-  @include meta.load-css('@ids/styles/scss/components/loading');
-  @include meta.load-css('@ids/styles/scss/components/main-button');
-  @include meta.load-css('@ids/styles/scss/components/mobile-header');
-  @include meta.load-css('@ids/styles/scss/components/modal');
-  @include meta.load-css('@ids/styles/scss/components/number-badge');
-  @include meta.load-css('@ids/styles/scss/components/option');
-  @include meta.load-css('@ids/styles/scss/components/overlay');
-  @include meta.load-css('@ids/styles/scss/components/pagination-dots');
-  @include meta.load-css('@ids/styles/scss/components/pagination-number');
-  @include meta.load-css('@ids/styles/scss/components/pagination');
-  @include meta.load-css('@ids/styles/scss/components/password');
-  @include meta.load-css('@ids/styles/scss/components/progress-bar');
-  @include meta.load-css('@ids/styles/scss/components/radio-button');
-  @include meta.load-css('@ids/styles/scss/components/shimmer');
-  @include meta.load-css('@ids/styles/scss/components/shortcut-carousel');
-  @include meta.load-css('@ids/styles/scss/components/shortcut');
-  @include meta.load-css('@ids/styles/scss/components/slider-currency');
-  @include meta.load-css('@ids/styles/scss/components/slider-range');
-  @include meta.load-css('@ids/styles/scss/components/slider');
-  @include meta.load-css('@ids/styles/scss/components/sort');
-  @include meta.load-css('@ids/styles/scss/components/switch');
-  @include meta.load-css('@ids/styles/scss/components/table');
-  @include meta.load-css('@ids/styles/scss/components/tabs');
-  @include meta.load-css('@ids/styles/scss/components/tag');
-  @include meta.load-css('@ids/styles/scss/components/tooltip-wrapper');
-  @include meta.load-css('@ids/styles/scss/components/tooltip');
-} */
+  */
+}

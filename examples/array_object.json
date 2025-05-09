@@ -1,0 +1,30 @@
+[
+  {
+    "dataType": "array",
+    "fieldType": "section",
+    "contract": "coelho",
+    "label": "gênero array",
+    "content": [
+      {
+        "dataType": "string",
+        "contract": "coelhinho",
+        "label": "genero animal",
+        "fieldType": "input"
+      }
+    ]
+  },
+  {
+    "dataType": "object",
+    "fieldType": "section",
+    "contract": "coelhete",
+    "label": "gênero objeto",
+    "content": [
+      {
+        "dataType": "string",
+        "contract": "coelhao",
+        "label": "genero animal",
+        "fieldType": "input"
+      }
+    ]
+  }
+]

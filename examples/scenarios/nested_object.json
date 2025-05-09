@@ -1,0 +1,40 @@
+{
+  "dataType": "object",
+  "fieldType": "section",
+  "content": [
+    {
+      "contract": "nivel1",
+      "dataType": "object",
+      "fieldType": "section",
+      "label": "Nível 1",
+      "content": [
+        {
+          "contract": "nivel2",
+          "dataType": "object",
+          "fieldType": "section",
+          "label": "Nível 2",
+          "content": [
+            {
+              "contract": "chave1",
+              "dataType": "string",
+              "fieldType": "input",
+              "label": "Chave"
+            },
+            {
+              "contract": "chave2",
+              "dataType": "string",
+              "fieldType": "input",
+              "label": "Chave"
+            }
+          ]
+        },
+        {
+          "contract": "chave3",
+          "dataType": "string",
+          "fieldType": "input",
+          "label": "Chave"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+applied_templates:
+- inputs: {}
+  template_data_path: quickweb-angular/template-base
+global_computed_inputs: {}
+global_inputs:
+  example: false
+  project_name: angular-helloworld-s3
+  project_segment: Private
+stack: quickweb-angular
+stack_type: app

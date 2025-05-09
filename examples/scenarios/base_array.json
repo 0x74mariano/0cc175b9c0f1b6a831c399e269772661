@@ -1,0 +1,12 @@
+{
+  "dataType": "array",
+  "fieldType": "section",
+  "content": [
+    {
+      "contract": "chave",
+      "dataType": "string",
+      "fieldType": "input",
+      "label": "Chave"
+    }
+  ]
+}

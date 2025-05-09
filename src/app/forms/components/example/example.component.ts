@@ -1,8 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { IdsFormControlModule, IdsFormFieldModule } from '@ids/angular';
+
+//-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --//
+//-- * * * * * * * * * * * O conteúdo abaixo * * * * * * * * * * * * * --//
+//-- * * * * * * * * * * é apenas um exemplo * * * * * * * * * * * * * --//
+//-- * * * * * * * * * * e pode ser substituído. * * * * * * * * * * * --//
+//-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --//
+//-- * * * * * * * * * Exclua o modelo abaixo * * * * * * * * * * * * --//
+//-- * * * * * * * * * para começar seu projeto! * * * * * * * * * * * --//
+//-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * --//
 
 @Component({
   standalone:true,
@@ -10,10 +18,10 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './example.component.html',
   styleUrls: ['./example.component.scss'],
   imports:[
+    IdsFormControlModule,
+    IdsFormFieldModule,
     ReactiveFormsModule,
-    CommonModule,
-    MatFormFieldModule,
-    MatInputModule,
+    CommonModule
   ]
 })
 export class ExampleComponent implements OnInit {
@@ -77,5 +85,4 @@ export class ExampleComponent implements OnInit {
   form = new FormGroup({
     autoResize: new FormControl(''),
   })
-
 }

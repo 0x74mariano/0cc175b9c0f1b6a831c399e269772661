@@ -1,10 +1,22 @@
-<hr>
-<h1>Seção {{formsField.label}}</h1>
-<ng-container *ngFor="let item of formsField.content">
+<div style="border-top: solid;border-top-width: 0.5px;border-bottom: solid;border-bottom-width: 0.5px;margin-top:20px;">
+<div style="border-bottom: solid;border-bottom-width: 0.5px; margin-bottom:20px;">
+  <h1>{{formsField?.label}}</h1>
+</div>
+<ng-container *ngFor="let item of formsField?.content; index as i">
   <ng-container *ngIf="item.fieldType === 'input'">
-    <mf-forms-field-input [formsField]="item" [color]="outputColor" [path]="path + item.contract"></mf-forms-field-input>
+    <mf-forms-field-input [formsField]="item" [path]="fieldId"></mf-forms-field-input>
   </ng-container>
-  <ng-container *ngIf="(item.fieldType === 'array') || (item.fieldType === 'object')">
-    <mf-forms-section [formsField]="item" [color]="outputColor"></mf-forms-section>
+  <ng-container *ngIf="item.fieldType === 'section'">
+      <mf-forms-section [formsField]="item" [path]="fieldId"></mf-forms-section>
+    </ng-container>
+  <ng-container *ngIf="item.fieldType === 'select'">
+    <mf-forms-field-select></mf-forms-field-select>
+  </ng-container>
+  <ng-container *ngIf="item.fieldType === 'checkbox'">
+    <mf-forms-field-checkbox></mf-forms-field-checkbox>
+  </ng-container>
+  <ng-container *ngIf="item.fieldType === 'radio'">
+    <mf-forms-field-radio></mf-forms-field-radio>
   </ng-container>
 </ng-container>
+</div>

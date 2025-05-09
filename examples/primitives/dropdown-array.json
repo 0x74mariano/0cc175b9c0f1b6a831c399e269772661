@@ -1,0 +1,17 @@
+{
+  "dataType": "object",
+  "fieldType": "section",
+  "content": [
+    {
+      "contract": "corGato",
+      "dataType": "array",
+      "fieldType": "dropdown",
+      "label": "Cor do gato",
+      "content": [
+        "Colorido",
+        "Laranja",
+        "Siamês"
+      ]
+    }
+  ]
+}

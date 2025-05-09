@@ -1,0 +1,26 @@
+{
+  "dataType": "object",
+  "fieldType": "section",
+  "content": [
+    {
+      "contract": "nivel1",
+      "dataType": "object",
+      "fieldType": "section",
+      "content": [
+        {
+          "contract": "nivel2",
+          "dataType": "array",
+          "fieldType": "section",
+          "content": [
+            {
+              "contract": "nivel3",
+              "dataType": "array",
+              "fieldType": "section",
+              "content": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionComponent } from './section.component';
+import { SectionComponent } from '../_/section.component';
 
 describe('FormsArrayComponent', () => {
   let component: SectionComponent;

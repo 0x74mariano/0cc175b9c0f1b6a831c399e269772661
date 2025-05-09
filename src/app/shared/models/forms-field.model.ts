@@ -1,7 +1,7 @@
 export class FormsFieldModel {
-  label!: string
+  content?: FormsFieldModel[] | string[]
+  contract?: string
   dataType!: string
-  contract!: string
-  content?: FormsFieldModel[]
   fieldType!: string
+  label?: string
 }

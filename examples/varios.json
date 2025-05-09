@@ -1,0 +1,64 @@
+[
+  {
+    "dataType": "array",
+    "fieldType": "section",
+    "contract": "gato",
+    "label": "gênero animal",
+    "content": [
+      {
+        "dataType": "string",
+        "contract": "coelho",
+        "label": "gênero animal",
+        "fieldType": "input"
+      }
+    ]
+  },
+  {
+    "dataType": "string",
+    "contract": "coelho",
+    "label": "gênero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorrol",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorroi",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorroooooooo",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorrooo",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorroooo",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorroooooo",
+    "label": "genero animal",
+    "fieldType": "input"
+  },
+  {
+    "dataType": "string",
+    "contract": "cachorroo",
+    "label": "genero animal",
+    "fieldType": "input"
+  }
+]

@@ -1,20 +1,23 @@
-<div class="ids-col-4 ids-card -variant">
-  <p>Digite seu JSON</p>
-  <form [formGroup]="form" class="form">
+<div class="ids-grid-2" style="margin: 20px">
+  <form [formGroup]="form" style="margin: 20px">
+    <div style="margin-bottom: 20px; font-weight: bold">
+      <p>Digite seu JSON</p>
+    </div>
     <mat-form-field>
+      <mat-label>----------------</mat-label>
       <textarea
         matInput
         (change)="onTextAreaChange($event)"
-        class="card-width"
         autoResize
         cols="30"
-        formControlName="autoResize"
       ></textarea>
     </mat-form-field>
   </form>
-</div>
 
-<div class="ids-col-4 ids-card -variant">
-  <p>Seu JSON ficará assim</p>
-  <pre><code>{{ expectedJsonOutputFormatted }}</code></pre>
+  <div class="">
+    <div style="margin-bottom: 20px; font-weight: bold">
+      <p>Seu JSON ficará assim</p>
+    </div>
+    <pre><code>{{ expectedJsonOutputFormatted }}</code></pre>
+  </div>
 </div>
